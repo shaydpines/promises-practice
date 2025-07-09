@@ -27,6 +27,8 @@ function getVideo(subscriptionStatus) {
 async function main() {
   const status = (await getSubscriptionStatus());
   statusRef.innerHTML = status
+  const videoStatus = (await getVideo(status))
+  videoText.innerHTML = videoStatus
   try{
     console.log(await getVideo(status))
   }
